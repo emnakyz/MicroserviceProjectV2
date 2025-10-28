@@ -66,9 +66,9 @@ namespace FreeCourse.Web
 
 			app.UseRouting();
 
-			app.UseAuthorization();
-
+			// Authentication must come before Authorization
 			app.UseAuthentication();
+			app.UseAuthorization();
 
 			app.UseEndpoints(endpoints =>
 			{
