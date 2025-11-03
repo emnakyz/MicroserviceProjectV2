@@ -1,3 +1,4 @@
+using FreeCourse.Shared.Services;
 using FreeCourse.Web.Handler;
 using FreeCourse.Web.Models;
 using FreeCourse.Web.Services;
@@ -9,9 +10,6 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace FreeCourse.Web
 {
@@ -30,6 +28,7 @@ namespace FreeCourse.Web
 			services.Configure<ClientSettings>(Configuration.GetSection("ClientSettings"));
 			services.Configure<ServiceApiSettings>(Configuration.GetSection("ServiceApiSettings"));
 			services.AddHttpContextAccessor();
+			services.AddScoped<ISharedIdentityService, SharedIdentityService>();
 			var serviceApiSettings = Configuration.GetSection("ServiceApiSettings").Get<ServiceApiSettings>();
 
 			services.AddScoped<ResourceOwnerPasswordTokenHandler>();
