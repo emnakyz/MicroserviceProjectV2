@@ -15,7 +15,7 @@ namespace FreeCourse.Web.Models.Catalogs
 		public decimal Price { get; set; }
 		public string Picture { get; set; }
 		public string UserId { get; set; }
-		public FeatureViewModel Feateure { get; set; }
+		public FeatureViewModel Feature { get; set; }
 		[Display(Name = "Kurs Kategori")]
 		[Required]
 		public string CategoryId { get; set; }

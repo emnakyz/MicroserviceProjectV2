@@ -16,7 +16,7 @@
 
                 <div class="mb-3">
                     <label for="exampleFormControlInput1" class="form-label" asp-for="CategoryId"></label>
-                    <select class="form-control" asp-items="@ViewBag.categoryList">
+                    <select asp-for="CategoryId" class="form-control" asp-items="@ViewBag.categoryList">
                         <option value="">kategori seçiniz</option>
                     </select>
 
@@ -38,9 +38,9 @@
                     <span class="text-danger" asp-validation-for="Description"></span>
                 </div>
                 <div class="mb-3">
-                    <label asp-for="Feateure.Duration" class="form-label"></label>
-                    <input asp-for="Feateure.Duration" class="form-control">
-                    <span class="text-danger" asp-validation-for="Feateure.Duration"></span>
+                        <label asp-for="Feature.Duration" class="form-label"></label>
+                        <input asp-for="Feature.Duration" class="form-control">
+                        <span class="text-danger" asp-validation-for="Feature.Duration"></span>
                 </div>
                 @*Resim Input Gelicek*@
                 <button type="submit" class="btn btn-primary">Kurs Kaydet</button>
